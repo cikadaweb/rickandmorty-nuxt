@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full bg-gray-100 min-w-[330px]">
+  <div>
     <TheHeader />
     <div class="container mx-auto p-4">
       <slot />
