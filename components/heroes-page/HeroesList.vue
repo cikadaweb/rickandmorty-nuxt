@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import HeroItem from '@/components/heroes-page/HeroItem.vue'
+import HeroItem from '@/components/heroes-page/HeroItem.vue';
 
   const props = defineProps({
     items: {
