@@ -26,6 +26,7 @@ export const useHeroesStore = defineStore("heroes", {
         const data = await heroes;
         this.setHeroes(data.results);
       } catch (error) {
+        this.setHeroes([]);
         console.log(error);
       }
     },
@@ -46,6 +47,7 @@ export const useHeroesStore = defineStore("heroes", {
         const data = await heroes;
         this.setHeroes(data.results);
       } catch (error) {
+        this.setHeroes([]);
         console.log(error);
       }
     },
@@ -65,5 +67,5 @@ export const useHeroesStore = defineStore("heroes", {
       this.heroes = payload;
     },
   },
-  persist: true,
+  persist: false,
 });
