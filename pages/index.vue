@@ -20,7 +20,7 @@
           v-if="isShowHeroesList" 
           :items="heroesStore.getHeroes"
         />
-        <div v-else class="text-xl font-bold text-center mt-8">По данному запросу ничего не найдено!</div>
+        <div v-else class="text-2xl font-bold text-center mt-8">По данному запросу ничего не найдено!</div>
       </div>
     </div>
   </section>
