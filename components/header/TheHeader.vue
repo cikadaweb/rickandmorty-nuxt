@@ -5,7 +5,7 @@
       <nav>
         <ul class="flex items-center gap-4">
           <li><NuxtLink to="/">Главная</NuxtLink></li>
-          <li><NuxtLink to="/about">Обо мне</NuxtLink></li>
+          <li><NuxtLink to="https://github.com/cikadaweb">Обо мне</NuxtLink></li>
         </ul>
       </nav>
     </div>
