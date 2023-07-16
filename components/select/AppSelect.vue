@@ -1,7 +1,8 @@
 <template>
-  <div class="select" :style="{ width: width }">
+  <div class="select relative" :style="{ width: width }">
     <div 
-      class="select__input relative bg-slate-50 text-lg px-5 py-2 rounded-xl shadow-lg"
+      class="select__input relative bg-slate-50 text-lg px-5 py-2 shadow-lg"
+      :class="isShowOptions ? 'rounded-t-xl' : 'rounded-xl'"
       @click.self="toggleOptionsVisible"
     >{{ value }} 
     <nuxt-icon
@@ -19,7 +20,7 @@
     <ul
       :style="{ width: width }"
       v-if="isShowOptions"
-      class="select__list bg-slate-50 text-lg mt-1">
+      class="select__list absolute top-10 left-0 bg-slate-50 text-lg py-1 mt-1 rounded-b-xl border-2 z-10">
       <li 
         class="select__item px-5 py-2 transition duration-300 ease-in-out hover:bg-slate-200"
         v-for="option in options"
