@@ -16,9 +16,11 @@
         />
       </div>
       <div class="hero__column">
-        <HeroesList 
+        <HeroesList
+          v-if="isShowHeroesList" 
           :items="heroesStore.getHeroes"
         />
+        <div v-else class="text-xl font-bold text-center mt-8">По данному запросу ничего не найдено!</div>
       </div>
     </div>
   </section>
@@ -32,9 +34,7 @@ import {useHeroesStore} from '@/store/heroes'
 
   const heroesStore = useHeroesStore();
 
-  onServerPrefetch(async () => {
-    await heroesStore.fetchHeroes()
-  });
+  heroesStore.fetchHeroes()
 
   
   const heroName = ref('');
@@ -61,7 +61,14 @@ import {useHeroesStore} from '@/store/heroes'
         return null
         break;
     }
-  }
+  };
+  const isShowHeroesList = computed(() => {
+    if (heroesStore.getHeroes.length > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  });
 
   watch([heroName, heroStatus], ([heroName, heroStatus]) => {
     heroesStore.filterHeroes({
