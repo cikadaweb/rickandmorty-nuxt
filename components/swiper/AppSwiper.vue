@@ -12,7 +12,7 @@
     :creative-effect="{
       prev: {
         shadow: false,
-        translate: ['-20%', 0, -1],
+        translate: ['-100%', 0, -1],
       },
       next: {
         translate: ['100%', 0, 0],
@@ -20,9 +20,7 @@
     }"
   >
     <SwiperSlide v-for="slide in items" :key="slide">
-      <div class="relative pt-[300px] flex justify-center items-center">
-        <img class="absolute top-0 left-0 w-full h-full object-cover" :src="slide.image" alt="avatar">
-      </div>
+      <img class="w-[300px] text-center" :src="slide.image" alt="avatar">
     </SwiperSlide>
   </Swiper>
 </template>
@@ -37,3 +35,11 @@
     },
   });
 </script>
+
+<style scoped>
+.swiper-slide {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important; 
+}
+</style>
