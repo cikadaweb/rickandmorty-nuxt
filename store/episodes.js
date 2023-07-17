@@ -1,11 +1,12 @@
 import { defineStore } from "pinia";
-import axios from "axios";
+import { DefaultAPIInstance } from "@/api";
 
 export const useEpisodesStore = defineStore("episodes", {
   state: () => {
     return {
       currentEpisode: {},
       currentEpisodeHeroes: [],
+      loading: false,
     };
   },
   getters: {
@@ -15,19 +16,25 @@ export const useEpisodesStore = defineStore("episodes", {
     getCurrentEpisodeHeroes() {
       return this.currentEpisodeHeroes;
     },
+    getLoading() {
+      return this.loading;
+    },
   },
   actions: {
     async fetchCurrentEpisode(episodeID) {
-      const response = await axios.get(
-        `https://rickandmortyapi.com/api/episode/${episodeID}`
-      );
-      const episode = await response.data;
-      const data = await episode;
-      this.setCurrentEpisode(data);
-      this.fetchEpisodeHeroesID();
-    },
-    setCurrentEpisode(payload) {
-      this.currentEpisode = payload;
+      this.setLoading(true);
+      try {
+        const response = await DefaultAPIInstance.get(
+          `https://rickandmortyapi.com/api/episode/${episodeID}`
+        );
+        const episode = await response.data;
+        const data = await episode;
+        this.setCurrentEpisode(data);
+        this.fetchEpisodeHeroesID();
+        this.setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
     },
     async fetchEpisodeHeroesID() {
       const { getLastSymbolID } = useUtils();
@@ -40,14 +47,20 @@ export const useEpisodesStore = defineStore("episodes", {
       this.setCurrentEpisodeHeroes(heroesData);
     },
     async fetchHeroesData(heroId) {
-      const response = await axios.get(
+      const response = await DefaultAPIInstance.get(
         `https://rickandmortyapi.com/api/character/${heroId}`
       );
       const data = await response;
       return data.data;
     },
+    setCurrentEpisode(payload) {
+      this.currentEpisode = payload;
+    },
     setCurrentEpisodeHeroes(payload) {
       this.currentEpisodeHeroes = payload;
+    },
+    setLoading(payload) {
+      this.loading = payload;
     },
   },
 });
