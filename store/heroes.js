@@ -30,10 +30,11 @@ export const useHeroesStore = defineStore("heroes", {
         const heroes = await response.data;
         const data = await heroes;
         this.setHeroes(data.results);
-        this.setLoading(false);
       } catch (error) {
         this.setHeroes([]);
         console.log(error);
+      } finally {
+        this.setLoading(false);
       }
     },
     async filterHeroes({ name, status }) {
@@ -53,10 +54,11 @@ export const useHeroesStore = defineStore("heroes", {
         const heroes = await response.data;
         const data = await heroes;
         this.setHeroes(data.results);
-        this.setLoading(false);
       } catch (error) {
         this.setHeroes([]);
         console.log(error);
+      } finally {
+        this.setLoading(false);
       }
     },
     async fetchCurrentHeroe(characterID) {
@@ -71,6 +73,8 @@ export const useHeroesStore = defineStore("heroes", {
         this.setLoading(false);
       } catch (error) {
         console.log(error);
+      } finally {
+        this.setLoading(false);
       }
     },
     setHeroes(payload) {

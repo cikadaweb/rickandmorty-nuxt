@@ -31,9 +31,10 @@ export const useEpisodesStore = defineStore("episodes", {
         const data = await episode;
         this.setCurrentEpisode(data);
         this.fetchEpisodeHeroesID();
-        this.setLoading(false);
       } catch (error) {
         console.log(error);
+      } finally {
+        this.setLoading(false);
       }
     },
     async fetchEpisodeHeroesID() {
