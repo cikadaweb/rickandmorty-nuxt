@@ -20,7 +20,11 @@
     }"
   >
     <SwiperSlide v-for="slide in items" :key="slide">
-      <img class="w-[300px] text-center" :src="slide.image" alt="avatar">
+      <img 
+        class="w-[300px] text-center"
+        :src="slide.image" alt="avatar"
+        @click="goToHeroPage(slide.id)"
+      >
     </SwiperSlide>
   </Swiper>
 </template>
@@ -34,6 +38,14 @@
       }
     },
   });
+
+  const router = useRouter();
+
+  const goToHeroPage = (slideID) => {
+    router.push(`/character/${slideID}`);
+  };
+  
+
 </script>
 
 <style scoped>
