@@ -1,6 +1,14 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 rickandmorty REST API
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+#### This project is an application for interacting with the API rickandmortyapi.com
+
+[Project link](<[https://speedtest-print-text.firebaseapp.com/](https://main--venerable-smakager-0cc3d5.netlify.app/)>)
+
+### Technologies
+
+- Nuxt 3 - Vue 3 Composition API
+- Pinia
+- Tailwind CSS
 
 ## Setup
 
@@ -31,33 +39,3 @@ pnpm run dev
 # yarn
 yarn dev
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
