@@ -5,7 +5,7 @@
   >
     <img class="character__image m-auto rounded-full transition duration-300 ease-in-out hover:scale-110" :src="heroesStore.getCurrentHeroe.image" alt="avatar">
     <div class="flex items-center justify-between mt-3">
-      <div class="text-4xl">Досье:</div>
+      <div class="text-2xl sm:text-4xl">Досье:</div>
       <AppBadge :bgColor="heroStatusColor" textColor="text-slate-50">{{ heroStatus }}</AppBadge>
     </div>
     <div class="my-3 border-b-2 border-slate-300"></div>
