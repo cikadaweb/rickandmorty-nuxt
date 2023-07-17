@@ -1,6 +1,6 @@
 <template>
   <li class="hero-item text-base bg-slate-50 shadow-lg p-2 sm:p-4">
-    <div class="hero-item__row flex-wrap justify-between mx-3 my-0">
+    <div class="hero-item__row flex flex-wrap justify-between mx-3 my-0">
       <div class="hero-item__column flex gap-4 px-3 py-0">
         <div class="relative self-start shrink-0">
           <img
