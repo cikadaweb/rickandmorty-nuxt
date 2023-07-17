@@ -11,6 +11,13 @@
 - Tailwind CSS
 - Axios
 
+### UI components
+
+- Select
+- Input
+- Spinner
+- Swiper
+
 ## Setup
 
 Make sure to install the dependencies:
