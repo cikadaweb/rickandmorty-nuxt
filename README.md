@@ -2,13 +2,14 @@
 
 #### This project is an application for interacting with the API rickandmortyapi.com
 
-[Project link](<[https://speedtest-print-text.firebaseapp.com/](https://main--venerable-smakager-0cc3d5.netlify.app/)>)
+[Project link](https://main--venerable-smakager-0cc3d5.netlify.app/)
 
 ### Technologies
 
 - Nuxt 3 - Vue 3 Composition API
 - Pinia
 - Tailwind CSS
+- Axios
 
 ## Setup
 
