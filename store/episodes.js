@@ -64,4 +64,5 @@ export const useEpisodesStore = defineStore("episodes", {
       this.loading = payload;
     },
   },
+  persist: true,
 });

@@ -84,5 +84,5 @@ export const useHeroesStore = defineStore("heroes", {
       this.loading = payload;
     },
   },
-  persist: false,
+  persist: true,
 });
