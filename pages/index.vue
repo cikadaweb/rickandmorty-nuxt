@@ -16,11 +16,17 @@
         />
       </div>
       <div class="hero__column">
+
         <HeroesList
-          v-if="isShowHeroesList" 
+          v-if="!heroesStore.getLoading && isShowHeroesList" 
           :items="heroesStore.getHeroes"
         />
-        <div v-else class="text-2xl font-bold text-center mt-8">По данному запросу ничего не найдено!</div>
+        <div v-else-if="!heroesStore.getLoading && !isShowHeroesList" class="text-2xl font-bold text-center mt-8">По данному запросу ничего не найдено!</div>
+
+        <div v-else>
+          <AppSpinner fullscreen />
+        </div>
+
       </div>
     </div>
   </section>
@@ -30,6 +36,7 @@
 import AppInput from '@/components/input/AppInput.vue';
 import AppSelect from '@/components/select/AppSelect.vue';
 import HeroesList from '@/components/heroes-page/HeroesList.vue'
+import AppSpinner from '@/components/loader/AppSpinner.vue';
 import {useHeroesStore} from '@/store/heroes'
 
   const heroesStore = useHeroesStore();
